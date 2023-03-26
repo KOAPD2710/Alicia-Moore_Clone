@@ -1,17 +1,17 @@
 @font-face{
 	font-family: FontText;
-	src:	url(../fonts/Test Founders Grotesk 400.ttf),
-			url(../fonts/Test Founders Grotesk 400.otf),
-			url(../fonts/Test Founders Grotesk 400.woff);
-	font-weight: 400;
+	src:	url(../fonts/Neutra-Text.ttf),
+			url(../fonts/Neutra-Text.otf),
+			url(../fonts/Neutra-Text.woff);
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face{
 	font-family: FontText;
-	src:	url(../fonts/Test Founders Grotesk Light 300.ttf),
-			url(../fonts/Test Founders Grotesk Light 300.otf),
-			url(../fonts/Test Founders Grotesk Light 300.woff);
-	font-weight: 300;
+	src:	url(../fonts/NeutraText-Demi.ttf),
+			url(../fonts/NeutraText-Demi.otf),
+			url(../fonts/NeutraText-Demi.woff);
+	font-weight: 400;
 	font-style: normal;
 }
 
@@ -48,5 +48,6 @@ body{
 	color: black;
 	font-weight: 300;
 	font-style: normal;
+	letter-spacing: .2px;
 	line-height: 1.5;
 }

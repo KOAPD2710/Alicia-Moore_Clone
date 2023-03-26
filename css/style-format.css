@@ -21,7 +21,6 @@ html,body {
 	overscroll-behavior: none;
 	background-color: var(--b);
 }
-
 canvas {
 	display: inline-block;
 	margin: 0;

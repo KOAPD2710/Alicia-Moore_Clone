@@ -90,12 +90,16 @@
 		.link {
 			margin-top: 50px;
 			margin-bottom: 0px;
+			& a{
+				color: black;
+			}
 		}
 	}
 
 	.container{
 		width: 100%;
 		overflow: hidden;
+		background-color: teal;
 
 		& img{
 			width: 100%;
