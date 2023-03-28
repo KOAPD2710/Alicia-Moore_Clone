@@ -6,8 +6,8 @@ function shop(){
 
 	var container = $(".container").height();
 
-	$("#container").css('height', ' ' + container + 'px ');
-	$("#footer").css('height', ' ' + (container+height*.55) + 'px ');
+	$("#container").css('height', ' ' + (container + 100) + 'px ');
+	$("#footer").css('height', ' ' + (container + 100 + height*.55) + 'px ');
 	console.log(container);
 
 
