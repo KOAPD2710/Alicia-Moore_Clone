@@ -14,7 +14,7 @@ function about(){
 
 
 
-window.addEventListener('load', function() {
+$(document).ready(function(e) {
 	about();
 	window.addEventListener('resize', function() {
 		about();

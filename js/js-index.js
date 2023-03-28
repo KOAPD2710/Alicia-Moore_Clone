@@ -24,6 +24,10 @@ function index(){
 	$(".section1 .container").css('column-gap', ' ' + section1gap +  'px ');
 	$(".section1 .panel.first").css('margin-left', ' ' + firstpanelpos + 'px ');
 	$(".section1 .panel.first").css('margin-right', ' ' + firstpanelpos-section1gap/4 + 'px ');
+	// $(".section1 .panel .pic1").css('margin-top', ' ' + (height - $(".section1 .panel .pic1").height())/2 + 'px ');
+	// $(".section1 .panel .pic2").css('margin-top', ' ' + (height - $(".section1 .panel .pic2").height())/2 + 'px ');
+	// $(".section1 .panel .pic3").css('margin-top', ' ' + (height - $(".section1 .panel .pic3").height())/2 + 'px ');
+	// $(".section1 .panel .pic4").css('margin-top', ' ' + (height - $(".section1 .panel .pic4").height())/2 + 'px ');
 
 	$(".section1 .panel img").each(function() {
 		$(this).css('margin-top', ' ' + (height - $(this).height())/2 + 'px ');
@@ -45,6 +49,15 @@ function index(){
 	$(".section2").css('top', ' ' + (section1length - height) +'px ');
 	$(".section3").css('top', ' ' + (section1length) +'px ');
 
+	// gsap.to(".section2", {
+	// 	scrollTrigger: {
+	// 		trigger: ".section2",
+	// 		start: "top top",
+	// 		end: "bottom top",
+	// 		pin: ".section2",
+	// 		markers: false,
+	// 	}
+	// });
 	gsap.to(".section3 .container img", {
 		scrollTrigger: {
 			trigger: ".section3 .container",
@@ -133,15 +146,12 @@ function index(){
 	gsap.to(".navigation", {
 		scrollTrigger: {
 			trigger: ".section2",
-			start: "top bottom",
+			start: "-100px bottom",
 			endTrigger: ".section4",
-			end: "bottom center",
+			end: "bottom 55%",
+			toggleClass: {targets: ".navigation", className: "lg-at-small"},
 			markers: false,
-			toggleClass: {
-				targets: ".navigation",
-				className: "lg-at-small",
-			}
-		},
+		}
 	});
 
 	$(".navigation .custom-fragment").hover(function() {
@@ -152,7 +162,6 @@ function index(){
 		if ($(".navigation").hasClass("lg-at-small")) {
 			$(".navigation").removeClass("hover-to-big")
 		}
-		$(".navigation").removeClass("hover-to-big")
 	})
 }
 
@@ -190,10 +199,7 @@ function polygon() {
 
 	var polygon = "".concat(p1).concat(p2).concat(p3).concat(p4).concat(p5).concat(p6).concat(p7).concat(p8).concat(p9);
 	document.documentElement.style.setProperty("--polygon", "polygon(".concat(polygon, ")"))
-
-	// console.log($(".section2").offset().top - sr);
 } 
-
 
 window.addEventListener('load', function() {
 	index();
@@ -203,6 +209,6 @@ window.addEventListener('load', function() {
 	});
 	window.addEventListener('resize', function() {
 		index();
-		polygon()
+		polygon();
 	});
 })
