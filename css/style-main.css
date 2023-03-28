@@ -113,7 +113,8 @@
   width: 200px;
 }
 .navi-fragment .custom-fragment .lg-fragment a .logo-sml {
-  width: 26px;
+  width: 28px;
+  height: auto;
   transition-delay: 0s;
 }
 .navi-fragment.top a {
