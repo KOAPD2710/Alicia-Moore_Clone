@@ -131,3 +131,11 @@
 		margin-top: 100px
 	}
 }
+
+@media (max-width: 1000px) {
+	.container {
+		.grid-3 {
+			display: block !important;
+		}
+	}
+}
