@@ -36,53 +36,35 @@ function shop(){
 	})
 }
 
-// function polygon() {
-// 	const root = document.querySelector(':root');
+function polygon() {
+	const root = document.querySelector(':root');
 
-// 	var w = $(window).innerWidth(),
-// 		h = $(window).innerHeight(),
-// 		sr = $(window).scrollTop(),
-// 		b = 50;
+	var w = $(window).innerWidth(),
+		h = $(window).innerHeight(),
+		sr = $(window).scrollTop(),
+		b = 50;
 
-// 	var	s3 = $(".section3").offset().top - sr,
-// 		sh3 = s3 + $(".section3 .text").height() + b*2,
-// 		s4 = $(".section4").offset().top - sr,
-// 		sh4 = s4 + $(".section4").height();
+	var	ctn = $("#container").offset().top - sr,
+		ctnheight = ctn + $("#container").height();
 
-// 	var tl1 = "0px ".concat(s3, "px"),
-// 		tr1 = "".concat(w, "px ").concat(s3, "px"),
-// 		br1 = "".concat(w, "px ").concat(sh3, "px"),
-// 		bl1 = "0px ".concat(sh3, "px"),
-// 		tl2 = "0px ".concat(s4, "px"),
-// 		tr2 = "".concat(w, "px ").concat(s4, "px"),
-// 		br2 = "".concat(w, "px ").concat(sh4, "px"),
-// 		bl2 = "0px ".concat(sh4, "px");
+	var tl = "0px ".concat(ctn, "px"),
+		tr = "".concat(w, "px ").concat(ctn, "px"),
+		br = "".concat(w, "px ").concat(ctnheight, "px"),
+		bl = "0px ".concat(ctnheight, "px");
 
-// 	var p1 = "".concat(tl1, ", "),
-// 		p2 = "".concat(bl2, ", "),
-// 		p3 = "".concat(bl1, ", "),
-// 		p4 = "".concat(br1, ", "),
-// 		p5 = "".concat(tr2, ", "),
-// 		p6 = "".concat(tl2, ", "),
-// 		p7 = "".concat(bl2, ", "),
-// 		p8 = "".concat(br2, ", "),
-// 		p9 = "".concat(tr1);
-
-// 	var polygon = "".concat(p1).concat(p2).concat(p3).concat(p4).concat(p5).concat(p6).concat(p7).concat(p8).concat(p9);
-// 	document.documentElement.style.setProperty("--polygon", "polygon(".concat(polygon, ")"))
-
-// 	// console.log($(".section2").offset().top - sr);
-// } 
+	var polygon = "".concat(tl, ", ").concat(tr, ", ").concat(br, ", ").concat(bl);
+	document.documentElement.style.setProperty("--polygon", "polygon(".concat(polygon, ")"));
+} 
 
 
 window.addEventListener('load', function() {
 	shop();
-	// polygon();
+	polygon();
 	window.addEventListener('scroll', function(){
-		// polygon();
+		polygon();
 	});
 	window.addEventListener('resize', function() {
 		shop();
-		// polygon()
+		polygon();
 	});
 })
