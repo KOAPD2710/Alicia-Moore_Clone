@@ -4,17 +4,6 @@ function index(){
 
 	gsap.defaults({ease: "none", duration: 2});
 
-	gsap.to(".section1 .container", {
-		scrollTrigger: {
-			trigger: ".section1",
-			start: "top top",
-			end: "bottom bottom",
-			pin: ".section1 .container",
-			scrub: true,
-			markers: false,
-		}
-	});
-
 	let section1panel = gsap.utils.toArray(".section1 .panel"),
 		section1length = section1panel.length*height*2,
 		firstpanelpos = (width-$('.section1 .panel.first').width())/2;
@@ -22,15 +11,29 @@ function index(){
 
 	$(".section1").css('height', ' ' + section1length + 'px ');
 	$(".section1 .container").css('column-gap', ' ' + section1gap +  'px ');
-	$(".section1 .panel.first").css('margin-left', ' ' + firstpanelpos + 'px ');
-	$(".section1 .panel.first").css('margin-right', ' ' + firstpanelpos-section1gap/4 + 'px ');
+	$(".section1 .panel.first").css('marginLeft', ' ' + firstpanelpos + 'px ');
+	$(".section1 .panel.first").css('marginRight', ' ' + firstpanelpos-section1gap/4 + 'px ');
 	// $(".section1 .panel .pic1").css('margin-top', ' ' + (height - $(".section1 .panel .pic1").height())/2 + 'px ');
 	// $(".section1 .panel .pic2").css('margin-top', ' ' + (height - $(".section1 .panel .pic2").height())/2 + 'px ');
 	// $(".section1 .panel .pic3").css('margin-top', ' ' + (height - $(".section1 .panel .pic3").height())/2 + 'px ');
 	// $(".section1 .panel .pic4").css('margin-top', ' ' + (height - $(".section1 .panel .pic4").height())/2 + 'px ');
 
+
+
 	$(".section1 .panel img").each(function() {
 		$(this).css('margin-top', ' ' + (height - $(this).height())/2 + 'px ');
+	});
+
+	gsap.to(".section1 .container", {
+		scrollTrigger: {
+			trigger: ".section1",
+			start: "top top",
+			end: "bottom bottom",
+			pin: ".section1 .container",
+			pinSpacing: false,
+			scrub: true,
+			markers: false,
+		}
 	});
 	var lastpanel = $(".section1 .panel.last"),
 		lastpanelmove = lastpanel.offset().left + lastpanel.width()-width;
@@ -46,6 +49,8 @@ function index(){
 		ease: "power1.out",
 		x: () => "+=" + -(lastpanelmove),
 	});
+
+
 	$(".section2").css('top', ' ' + (section1length - height) +'px ');
 	$(".section3").css('top', ' ' + (section1length) +'px ');
 
